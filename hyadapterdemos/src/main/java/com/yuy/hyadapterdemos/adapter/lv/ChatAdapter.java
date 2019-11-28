@@ -10,14 +10,18 @@ import java.util.List;
 /**
  * Coder: yuyang
  * Date: 2019/11/18
- * Description:
+ * Description: listview 多布局 适配器
  * Version:
  */
 public class ChatAdapter extends MultiItemTypeAdapter<ChatMessage> {
+
     public ChatAdapter(Context context, List<ChatMessage> datas) {
         super(context, datas);
 
+        //第一种 itemviewtype
         addItemViewDelegate(new MsgSendItemDelagate());
+
+        //第二种 itemviewtype
         addItemViewDelegate(new MsgComingItemDelagate());
 
     }

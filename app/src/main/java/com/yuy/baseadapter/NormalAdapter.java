@@ -63,52 +63,6 @@ public class NormalAdapter extends BaseAdapter {
 
         return viewHolder.getConvertView();
 
-
-
-//        LViewHolder viewHolder = null;
-//
-//        if (convertView == null) {
-//            viewHolder = new LViewHolder();
-//            convertView = mLayoutInflater.inflate(R.layout.item_lv, parent, false);
-//            viewHolder.mTextView = convertView.findViewById(R.id.id_tv_it);
-//            viewHolder.mButton = convertView.findViewById(R.id.id_btn_ma);
-//
-//            convertView.setTag(viewHolder);
-//
-//        }else {
-//
-//            viewHolder = (LViewHolder) convertView.getTag();
-//        }
-//
-//        viewHolder.mTextView.setText(mStrings.get(position));
-//
-//        viewHolder.mTextView.setOnClickListener(new View.OnClickListener() {
-//            @Override
-//            public void onClick(View v) {
-//                Toast.makeText(mContext, "点击了第" + position + "个TextView",Toast.LENGTH_SHORT).show();
-//            }
-//        });
-//
-//        viewHolder.mButton.setOnClickListener(new View.OnClickListener() {
-//            @Override
-//            public void onClick(View v) {
-//
-//                Intent intent = new Intent(mContext, Main2Activity.class);
-//                mContext.startActivity(intent);
-//
-//                Toast.makeText(mContext, "点击了第" + position + "个Button",Toast.LENGTH_SHORT).show();
-//            }
-//        });
-//
-//        return convertView;
     }
-
-//    private class LViewHolder{
-//
-//        TextView mTextView;
-//        Button mButton;
-//    }
-
-
 
 }

@@ -90,6 +90,7 @@ public class ChatMessage {
                 + content + ", createDate=" + createDate +", isComing = "+ isComMeg()+ "]";
     }
 
+    //listview 多布局数据
     public static List<ChatMessage> MOCK_DATAS = new ArrayList<>();
 
     static {

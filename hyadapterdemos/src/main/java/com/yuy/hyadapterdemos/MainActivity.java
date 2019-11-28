@@ -24,6 +24,7 @@ public class MainActivity extends AppCompatActivity {
     private List<String> mDatas = new ArrayList<>(Arrays.asList("MultiItem ListView",
             "RecyclerView",
             "MultiItem RecyclerView"));
+
     private ListView mListView;
 
     private View mEmptyView ;
@@ -42,11 +43,6 @@ public class MainActivity extends AppCompatActivity {
             protected void convert(ViewHolder viewHolder, String item, int position) {
                 viewHolder.setText(R.id.id_item_list_title, item);
             }
-//            @Override
-//            public void convert(ViewHolder holder, String o, int pos)
-//            {
-//                holder.setText(R.id.id_item_list_title, o);
-//            }
         });
 
         mListView.setEmptyView(mEmptyView);

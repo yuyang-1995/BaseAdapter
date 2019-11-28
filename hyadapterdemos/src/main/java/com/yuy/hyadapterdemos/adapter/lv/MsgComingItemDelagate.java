@@ -9,7 +9,7 @@ import com.yuy.listview_adapter.base.ViewHolder;
 /**
  * Coder: yuyang
  * Date: 2019/11/18
- * Description:
+ * Description: 接受item
  * Version:
  */
 public class MsgComingItemDelagate implements ItemViewDelegate<ChatMessage> {

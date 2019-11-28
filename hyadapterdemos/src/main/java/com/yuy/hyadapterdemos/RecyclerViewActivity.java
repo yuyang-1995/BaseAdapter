@@ -60,18 +60,21 @@ public class RecyclerViewActivity extends AppCompatActivity {
                         return false;
                     }
                 });
+
                 holder.setText(R.id.id_item_list_title, s + " : " + holder.getAdapterPosition());
             }
         };
 
+        //初始化 头布局和 脚部布局
         initHeadAndFooter();
 
+        //初始化空布局
         initEmptyView();
 
+        //上滑加载
         mLoadMoreWrapper = new LoadMoreWrapper(mHeaderAndFooterWrapper);
 
         mLoadMoreWrapper.setLoadMoreView(R.layout.default_loading);
-
 
         mLoadMoreWrapper.setOnLoadMoreListener(new LoadMoreWrapper.OnLoadMoreListener() {
             @Override
@@ -85,6 +88,7 @@ public class RecyclerViewActivity extends AppCompatActivity {
                         {
                             mDatas.add("Add:" + i);
                         }
+
                         mLoadMoreWrapper.notifyDataSetChanged();
                     }
                 },3000);
@@ -93,8 +97,11 @@ public class RecyclerViewActivity extends AppCompatActivity {
         });
 
 
+        //设置完 头 尾布局， 空布局， 上滑加载布局后， 给Rv 设置 最终装饰后的 适配器
         mRecyclerView.setAdapter(mLoadMoreWrapper);
 
+
+        //点击事件
         mAdapter.setOnItemClickListener(new CommonAdapter.OnItemClickListener() {
             @Override
             public void onItemClick(View view, RecyclerView.ViewHolder holder, int position)

@@ -8,7 +8,7 @@ import com.yuy.listview_adapter.base.ViewHolder;
 /**
  * Coder: yuyang
  * Date: 2019/11/18
- * Description:
+ * Description: 发送item
  * Version:
  */
 public class MsgSendItemDelagate implements ItemViewDelegate<ChatMessage> {

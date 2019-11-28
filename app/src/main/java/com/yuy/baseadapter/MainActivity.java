@@ -4,6 +4,7 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.os.Message;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ListView;
@@ -15,10 +16,12 @@ import com.yuy.listview_adapter.my.LViewHolder;
 
 import java.util.ArrayList;
 
-public class MainActivity extends AppCompatActivity {
+public class MainActivity extends AppCompatActivity implements WeakHandler.IHandler {
 
     private ArrayList<String> mStrings;
     private ListView mListView;
+    private WeakHandler handler = new WeakHandler(this);
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -41,6 +44,7 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 
+        handler.sendEmptyMessage(1);
 
         mListView.setAdapter(new LViewAdapter<String>( getApplicationContext(),mStrings, R.layout.item_lv) {
             @Override
@@ -84,6 +88,8 @@ public class MainActivity extends AppCompatActivity {
 
         for (int i = 1; i < 19; i++) {
 
+
+
             mStrings.add("第" + i + "条数据");
 
         }
@@ -92,5 +98,11 @@ public class MainActivity extends AppCompatActivity {
     }
 
 
+    @Override
+    public void handlMsg(Message message) {
 
+        if (message.what == 1) {
+            //...
+        }
+    }
 }
